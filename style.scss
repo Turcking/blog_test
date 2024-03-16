@@ -427,8 +427,7 @@ nav {
 }
 
 // sidebar-toggle
-.wrapper-sidebar {
-  width: 35%;
+.wrapper-sidebar .wrapper-content .toc {
   transition: 0.5s;
 }
 
@@ -440,12 +439,13 @@ nav {
   transform: translateX(-90%);
 }
 
-.wrapper-content {
-  transition: 0.5s;
-}
-
-:has(.wrapper-sidebar .sidebar-toggle input:checked) .wrapper-content {
-  width: 96.5%;
+:has(.wrapper-sidebar .sidebar-toggle input:checked) {
+  .wrapper-content {
+    width: 97%;
+  }
+  .toc {
+    left: 3%;
+  }
 }
 
 .sidebar-toggle {
@@ -475,6 +475,9 @@ nav {
 @include mobile {
   .sidebar-toggle {
     display: none;
+  }
+  .wrapper-sidebar>* {
+    width: 100%;
   }
 }
 
