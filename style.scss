@@ -427,12 +427,6 @@ nav {
 }
 
 // sidebar-toggle
-@include mobile {
-  .sidebar-toggle {
-    display: none;
-  }
-}
-:not(@include mobile) {
 .wrapper-sidebar {
   width: 35%;
   transition: 0.5s;
@@ -477,6 +471,11 @@ nav {
 .sidebar-toggle:has(input:checked)::before {
   content: ">>";
 }
+
+@include mobile {
+  .sidebar-toggle {
+    display: none;
+  }
 }
 
 // content
