@@ -427,7 +427,15 @@ nav {
 }
 
 // sidebar-toggle
-.wrapper-sidebar, .wrapper-content, .toc {
+.wrapper-sidebar {
+  transition: 0.5s;
+}
+
+.wrapper-content {
+  transition: 0.5s;
+}
+
+.toc {
   transition: 0.5s;
 }
 
