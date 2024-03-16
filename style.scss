@@ -427,7 +427,7 @@ nav {
 }
 
 // sidebar-toggle
-.wrapper-sidebar .wrapper-content .toc {
+.wrapper-sidebar, .wrapper-content, .toc {
   transition: 0.5s;
 }
 
