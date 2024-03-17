@@ -427,15 +427,7 @@ nav {
 }
 
 // sidebar-toggle
-.wrapper-sidebar {
-  transition: 0.5s;
-}
-
-.wrapper-content {
-  transition: 0.5s;
-}
-
-.toc {
+.wrapper-sidebar, .wrapper-content, .toc {
   transition: 0.5s;
 }
 
@@ -443,11 +435,10 @@ nav {
   width: 90%;
 }
 
-.wrapper-sidebar:has(.sidebar-toggle input:checked) {
-  transform: translateX(-90%);
-}
-
 :has(.wrapper-sidebar .sidebar-toggle input:checked) {
+  .wrapper-sidebar {
+    transform: translateX(-90%);
+  }
   .wrapper-content {
     width: 97%;
   }
@@ -464,20 +455,18 @@ nav {
   right: 0;
   top: 0;
   border-left: 1px solid #e9ecef;
-}
-
-.sidebar-toggle::before {
-  content: "<<";
-  position: relative;
-  display: block;
-  text-align: center;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.sidebar-toggle:has(input:checked)::before {
-  content: ">>";
+  ::before {
+    content: "<<";
+    position: relative;
+    display: block;
+    text-align: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  :has(input:checked)::before {
+    content: ">>";
+  }
 }
 
 @include mobile {
@@ -748,7 +737,7 @@ nav {
   background-color: $footer-background-color;
   position: absolute;
   clear:both;
-  width:100%;
+  width: 90%;
   bottom:0;
   
   @include mobile {
